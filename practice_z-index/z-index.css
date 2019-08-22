@@ -1,0 +1,55 @@
+.wrap1
+{
+    position: absolute;
+}
+.wrap1 > div 
+{
+    width : 80px;
+    height : 80px;
+    
+    border : 1px solid black;
+    position: absolute;
+    text-align: center;
+    color : white;
+    line-height: 5;
+}
+.wrap1 > div:nth-child(1)
+{
+    background-color: red;
+    transform : translate3d(10px,10px,0px);
+}
+.wrap1 > div:nth-child(2)
+{
+    background-color: yellow;
+    transform : translate3d(20px,20px,0px);
+}
+.wrap1 > div:nth-child(3)
+{
+    background-color: green;
+    transform : translate3d(30px,30px,0px);
+}
+.wrap1 > div:nth-child(4)
+{
+    background-color: slateblue;
+    transform : translate3d(40px,40px,0px);
+}
+.wrap1 > div:nth-child(5)
+{
+    background-color: slategray;
+    transform : translate3d(50px,50px,0px);
+}
+
+.wrap2
+{
+    width : 80px;
+    height : 80px;
+    
+    border : 1px solid black;
+    position: absolute;
+    text-align: center;
+    color : white;
+    line-height: 5;
+    
+    background-color: pink;
+    transform : translate3d(50px,25px,0px);
+}
