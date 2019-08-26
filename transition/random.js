@@ -14,8 +14,12 @@ document.querySelector(".scatter").addEventListener("click",function(event){
     {
         var width = Math.floor( Math.random() * ((windowInner[0]-100) - 0)) + 0;
         var height = Math.floor(Math.random() * ((windowInner[1]-200) - 0)) + 100;
+        var zindex = Math.floor(Math.random() * (cards.length - 0)) + 0;
         
         cards[index].style.top = height + "px";
         cards[index].style.left = width + "px";
+        cards[index].style.zIndex = zindex;
     }
 });
+
+//

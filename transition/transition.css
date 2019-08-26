@@ -6,45 +6,13 @@
 {
     border: 1px solid black;
     box-shadow: 5px 5px 1px black;
-    width : 100px;
-    height : 100px;
+    width : 69px;
+    height : 101px;
     
     position: fixed;
     
     text-align: center;
     line-height: 5.5;
     
-    -webkit-transition: all 0.5s;
-}
-.card > div:nth-child(1)
-{
-    background-color: orangered;
-}
-.card > div:nth-child(2)
-{
-    background-color: yellow;
-
-}
-.card > div:nth-child(3)
-{
-    background-color: gray;
-}
-
-.card > div:nth-child():hover
-{
-    transform: translate3d(400px,1px,0px);
-    -webkit-transition : -webkit-transform 0.25s steps(4,end);
-/*    transition-timing-function: steps(4,end);*/
-/*    transition-property: transform 0.5s;*/
-/*    transition-duration: 0.5s;*/
-}
-.card > div:nth-child():hover
-{
-    transform: translate3d(430px,3px,0px);
-    -webkit-transition : -webkit-transform 0.25s steps(4,end);
-}
-.card > div:nth-child():hover
-{
-    transform: translate3d(460px,6px,0px);
-    -webkit-transition : -webkit-transform 0.25s steps(4,end);
+    transition: all 0.5s;
 }
