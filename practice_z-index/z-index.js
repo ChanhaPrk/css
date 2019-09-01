@@ -1,35 +1,31 @@
-/*
-var z = 10;
+//div들에게 순서를 부여함
+//부여하지않으면 모두 순서가 같음 
+var wrap1s = document.querySelectorAll(".wrap1 > div");
 
-document.querySelector("div").addEventListener("click",function(event){
-   z += 1;
-   var st = z.toString();
-
-   console.log(st);
-   event.target.style.zIndex = st;
-});
-*/
-var beforeNode = null;
-var currentNode = null;
-
-var elements = document.querySelector(".wrap1").childNodes;
-for( var index = 0; index < elements.length; index++ )
+for( var index = 0; index < wrap1s.length; index++ )
 {
-    elements[index].addEventListener("click",function(event){
-        if( currentNode == null )
-        {
-            currentNode = event.target;
-            currentNode.style.zIndex = "1000";
-        }
-        else
-        {
-            beforeNode = currentNode;
-            
-            currentNode = event.target;
-            currentNode.style.zIndex = "1000";
+    
+    wrap1s[index].style.zIndex = index;
+}
 
-            beforeNode.style.zIndex = "999";
+//올라와야할 요소를 클릭했다면
+for( var index = 0; index < wrap1s.length; index++ )
+{
+    wrap1s[index].addEventListener("click",function(event){
+        
+        //일단 모든 요소의 zindex값을 -1씩함
+        for( var index = 0; index < wrap1s.length; index++ )
+        {
+             wrap1s[index].style.zIndex -= 1;
+        }
+        
+        //클릭한 요소의 zindex를 최상위로 올림 
+        event.target.style.zIndex = wrap1s.length;
+        
+        //그런데 이미 zindex가 가장 높다면 가장 높은 zindex으로 갈 필요없음
+        if( event.target.zIndex ==wrap1s.length )
+        {
+            return;
         }
     });
 }
-//z-index를 같은 크기로 지정하면 소스코드 작성 순서대로 정렬됨.. 아놔..
