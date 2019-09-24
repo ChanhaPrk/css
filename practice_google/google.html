@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <title>google</title>
+    <meta charset="utf-8">
+    
+</head>
+<style>
+    .nav-top
+    {
+        height : 60px;
+        display: flex;
+        align-items: center;
+    }
+    .nav-left-items
+    {
+        display: flex;
+        margin-left:auto;
+    }
+    .nav-item
+    {
+        padding-left: 15px;
+    }
+    .main
+    {
+        width : 700px;
+        text-align: center;
+        margin : 0 auto;
+        margin-top : 160px;
+    }
+    .search
+    {
+        margin : 30px;
+    }
+    .nav-bottom
+    {
+        border : 1px solid red; 
+        position:absolute;
+        color: rgba(0,0,0,.54);
+        bottom: 0;
+        width:98%;
+        
+    }
+    body
+    {
+        border: 1px solid green;
+    }
+    .footer-centry
+    {
+        margin-left: 20px;
+        text-align: left;
+    }
+    .footer-right
+    {
+        float : right;
+    }
+    .footer-item
+    {
+        padding-left : 20px;
+    }
+</style>        
+<body>
+    <link ref = 'stylesheet' href='main.css'>
+    
+    <div class='nav-top'>
+        <div class='nav-left-items'>
+            <div class='nav-item'>Gmail</div>
+            <div class='nav-item'>이미지</div>
+            <div class='nav-item'>more</div>
+            <div class='nav-item'>profile</div>        
+        </div>
+    </div>
+    
+    <div class='main'>
+        <img src='img/google.png'>
+        <form  class='search'>
+            <input type='text' size="40" >
+        </form>
+        <div class='buttons'>
+            <button style='height:25px; background=white;'>Ggoogle 검색</button>
+            <button style='height:25px'>I'm Feeling Lucky</button>   
+        </div>       
+    </div>
+    
+    <div class='nav-bottom'>
+        <div class='footer-centry'>대한민국</div>
+        <span class='footer-left'>
+            <span class='footer-item'>광고</span>
+            <span class='footer-item'>비즈니스</span>
+            <span class='footer-item'>Google정보</span>
+            <span class='footer-item'>검색의 원리</span>
+        </span>
+        <span class='footer-right'>
+            <span class='footer-item'>개인정보처리방침</span>
+            <span class='footer-item'>약관</span>
+            <span class='footer-item'>설정</span>
+        </span>
+    </div>
+</body>
+</html>
