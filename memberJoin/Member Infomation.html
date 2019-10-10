@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Member Infomation</title>
+        
+        <style type='text/css'>
+            html, body
+            {
+                font-size: 16px;
+            }
+            form
+            {
+                padding : 60px;
+                margin : 150px auto;
+                
+                
+                border : 1px solid black;
+                box-shadow: 6px 6px 1px gray;
+                width : 200px;
+            }
+            h3
+            {
+                text-align: center;
+                border: 1px solid black;
+                padding : 10px;
+            }
+            p
+            {
+                margin-bottom: 4px;
+            }
+            .submit
+            {
+                width : 162px;
+                margin-top : 20px;
+            }
+        </style>
+        <script src='memberJoin.js'></script>
+    </head>
+    <body>
+        <form action='' method='' onsubmit='return false;'>
+            <h3>Member join</h3>
+            <p>이    름</p>
+            <input type = 'text' id = 'name' size='15' maxlength='5' 
+                   onfocusout='chkMemberName(this)' placeholder='name' title='영어,숫자일 수 없습니다.'>
+            <div id='reqText_Name'></div>
+            <p>아 이 디</p>
+            <input type = 'text' id = 'id' maxlength='10' 
+                onfocusout='chkMemberId(this)' placeholder='id' title='숫자로 시작할 수 없으며, 한글도 불가능합니다.'>
+            <div id='reqText_id'></div>
+            <p>패 스 워 드</p>
+            <input type = 'password' id = 'pw' maxlength='10' 
+                   onfocusout='chkMemberPw(this)' placeholder='password'>
+            <div id='reqText_Pw'></div>
+            <p>닉 네 임</p>
+            <input type = 'text' id = 'nickName' maxlength='10' onfocusout='chkMemberNick(this)' placeholder='nick-name'>
+            <div id='reqText_Nick'></div>
+            <p>생 년 월 일</p>
+            <input type='date' id='bithday' onfocusout='chkMemberCal(this)' onchange='chkMemberCal(this)'>
+            <div id='reqText_Cal'></div>
+            <input type = 'submit' value='join' class='submit' onclick='chkMemberInfor(this)' >
+        </form>
+    </body>
+</html>
