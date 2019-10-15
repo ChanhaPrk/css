@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>slect box event</title>
+    </head>
+    <body>
+        <div>
+            <div>텍스트를 입력하십시오.</div>
+            <input type='text' id='fname' onchange='chkTextNumber()'>
+        </div>
+        <div>
+            <select id = 'values' onchange=''>
+                <option name='value0'>value0</option>
+                <option name='value1'>value1</option>
+                <option name='value2'>value2</option>
+                <option name='value3'>value3</option>
+                <option name='value4'>value4</option>
+                <option name='value5'>value5</option>
+            </select>
+        </div>
+        <div>
+            <input type='checkbox' name = 'chk_nubmer' value='even'>짝수
+            <input type='checkbox' name = 'chk_nubmer' value='oddnumber'>홀수
+        </div>
+        <div>
+            <input type='radio' name='rd_number' value='0'>0
+            <input type='radio' name='rd_number' value='1'>1
+            <input type='radio' name='rd_number' value='2'>2
+            <input type='radio' name='rd_number' value='3'>3
+            <input type='radio' name='rd_number' value='4'>4
+            <input type='radio' name='rd_number' value='5'>5
+        </div>
+        <script type='text/javascript'>
+            function getElementById( id )
+            {
+                return document.getElementById(id);
+            }
+            function getElementsByName( name )
+            {
+                return document.getElementsByName( name );
+            }
+            function getElementsByClass( className )
+            {
+                return document.getElementsByClassName( className );
+            }
+            
+            function changeChkBox( number )
+            {
+                var chkbox = document.getElementsByName('chk_nubmer');
+                
+                if( number % 2 == 0 )
+                {
+                    chkbox[0].checked = true;
+                    chkbox[1].checked = false;
+                }
+                else
+                {
+                    chkbox[0].checked = false;
+                    chkbox[1].checked = true;
+                }
+            }
+            
+            function chkTextNumber()
+            {
+                //value0, value1 value3...방식으로 텍스트를 입력하면 
+                //글자와 숫자를 분리하자 
+                var inputedText = document.querySelector('#fname').value;
+                var subNumber = inputedText.substring(5);
+                
+                
+                //subNumber가 짝수인지 홀수 인지 체크하자 
+                var chkbox = document.getElementsByName('chk_nubmer');
+                var rdbox = document.getElementsByName('rd_number');
+                
+                if( subNumber % 2 == 0 )
+                {
+                    chkbox[0].checked = 'checked';
+                    chkbox[1].checked = '';
+                    
+                    //짝수이면서
+                    //존재하는 radio박스 숫자에 해당되는지 물어보자 
+                    if( subNumber <= rdbox.length )
+                    {
+                        rdbox[subNumber].checked = true;
+                    }
+                    
+                }
+                else
+                {
+                    chkbox[0].checked = '';
+                    chkbox[1].checked = 'checked';
+                    //홀수이면서
+                    //존재하는 radio박스 숫자에 해당되는지 물어보자
+                    if( subNumber <= rdbox.length )
+                    {
+                        rdbox[subNumber].checked = true;
+                    }
+                }
+                
+            }
+
+            //radio box event
+            function a()
+            {
+                //클린된 라디오의 value의 값이 무엇인지 알아야 합니다.
+                var value = 0;
+                
+                var r = document.getElementsByName('rd_number');
+                for( var i = 0; i < r.length; i++ )
+                {
+                    r[i].addEventListener('click',function( event )
+                    {
+                        //짝수 홀수 변경
+                        changeChkBox( event.target.value );
+                        
+                        var selectbox = getElementById('values');
+                        
+                        selectbox.options[event.target.value].selected = true;
+                    },false );
+                }
+            }
+            a();
+            
+
+        </script>
+    </body>
+</html>
